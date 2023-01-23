@@ -1,0 +1,5 @@
+A small web app aiming to help keep track of information in tabletop roleplaying games.
+
+Information is stored as JSON notebooks that ultimately aim to be scriptable.
+
+The app is being reworked to create a plugin system, which will be safer and more robust than the previously planned system.

@@ -1,0 +1,118 @@
+* {
+	font-family: Verdana, sans-serif;
+	box-sizing: border-box;
+	font-size: 14px;
+	line-height: 1.5;
+	margin: 0;
+	word-wrap: anywhere;
+	color: white;
+}
+
+body {
+    background-color: white;
+	flex-direction: column;
+}
+body * {
+	display: flex;
+	flex-direction: inherit;
+	position: relative;
+}
+
+/* Toplevels and positionning */
+
+.toplevel {
+	background-color: rgba(0, 0, 0, 0.5);
+	box-shadow: 1px 1px 5px 0  rgba(0, 0, 0, 0.3);
+	width: max-content;
+}
+
+.sidebar.left {
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	flex-direction: column;
+}
+.sidebar.right {
+	position: fixed;
+	right: 0;
+	top: 0;
+	height: 100%;
+	flex-direction: column;
+}
+.sidebar.top {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	flex-direction: row;
+}
+.sidebar.bottom {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	flex-direction: row;
+}
+
+/* Content layouts */
+
+.vertical {
+	flex-direction: column !important;
+}
+.horizontal {
+	flex-direction: row !important;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+/* Popups and menus */
+
+nav {
+	display: none;
+	position: absolute;
+	z-index: 1;
+}
+nav.shown {
+	display: flex;
+}
+
+nav:not(.sidebar).sr {
+	left: 100%;
+	top: 50%;
+	transform: translatey(-50%);
+}
+/* .sidebar.right nav:not(.sidebar) {
+	right: 100%;
+	top: 50%;
+	transform: translatey(-50%);
+} */
+nav:not(.sidebar).sb {
+	top: 100%;
+	left: 50%;
+	transform: translatex(-50%);
+}
+/* .sidebar.bottom nav:not(.sidebar) {
+	bottom: 100%;
+	left: 50%;
+	transform: translatex(-50%);
+} */
+
+/* Buttons and appearance */
+
+.button, .padding {
+	padding: 8px;
+	max-width: 15vw;
+}
+
+.button:hover, .hover:hover, .selected {
+	background-color: rgba(255, 255, 255, 0.2);
+	cursor: pointer;
+}
+.button:active {
+	background-color: rgba(255, 255, 255, 0.3);
+	cursor: pointer;
+}

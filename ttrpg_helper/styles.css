@@ -1,0 +1,200 @@
+* {
+	font-family: verdana, sans-serif;
+	font-size: 14px;
+	text-decoration: none;
+	line-height: 1.5;
+
+	margin: 0;
+	border: none;
+	outline: none;
+
+	box-sizing: border-box;
+	color: black;
+	flex-shrink: 0;
+}
+
+body {
+	height: 100vh;
+}
+
+/* Manual padding and properties */
+
+.padding {
+	padding: 8px 16px;
+}
+.shade {
+	background-color: rgba(0, 0, 0, 0.05);
+}
+.right {
+	float: right;
+}
+.small {
+	font-size: 10px;
+}
+.center {
+	text-align: center;
+}
+.separator {
+	margin-bottom: 8px;
+}
+
+/* Main blocks and layout */
+
+header {
+	background-color: #999999;
+}
+
+#navbar {
+	background-color: #cccccc;
+	width: 180px;
+}
+#navbar div {
+	padding: 8px 16px;
+}
+#navbar button {
+	text-align: left;
+}
+
+#context {
+	background-color: white;
+}
+#context div {
+	padding: 8px;
+}
+#context div:not(:hover) > button:not(:focus) {
+	opacity: 0;
+}
+
+#plugins {
+	background-color: #ffcc80;
+	width: 220px;
+}
+#plugins > div {
+	margin-bottom: 8px;
+}
+
+#toolbar {
+	background-color: #ff9900;
+}
+
+.vertical {
+	display: flex;
+	flex-direction: column;
+}
+.horizontal {
+	display: flex;
+	flex-direction: row;
+}
+.grow {
+	flex-grow: 1;
+	flex-shrink: 1;
+}
+
+.vertical, .horizontal, .grow {
+	overflow: auto;
+}
+
+/* Editor details */
+
+details {
+	padding-left: 8px;
+}
+details details, summary:focus {
+	background-color: rgba(0, 0, 0, 0.05);
+}
+summary {
+	padding: 8px;
+	cursor: pointer;
+	font-weight: bold;
+}
+details[open] {
+	padding-bottom: 8px;
+}
+
+/* Miscellaneous objects appearances */
+
+*:focus {
+	box-shadow: 0 0 4px #00ffff;
+}
+
+#edit.editing {
+	background-color: rgba(255, 255, 0, 0.5);
+}
+
+input {
+	width: 120px;
+}
+input, .input {
+	background-color: transparent;
+	border: 1px solid transparent;
+	padding: 0 4px;
+	display: inline-block;
+	min-width: 120px;
+}
+*:hover > input, input:focus, *:hover > .input, .input:focus {
+	background-color: white;
+	border-color: #999999;
+}
+.input:empty::after {
+	content: "...";
+	color: grey;
+}
+
+.placeholder {
+	background-color: white;
+	border: 1px solid #999999;
+	min-width: 120px;
+	padding: 0 4px;
+}
+.placeholder:invalid:not(:focus) {
+	background-color: transparent;
+	box-shadow: none;
+}
+
+.flash {
+	animation: flash 0.5s;
+}
+@keyframes flash {
+  from { box-shadow: 0 0 6px #00ff00; }
+  to { box-shadow: none; }
+}
+
+.unsaved::after {
+	content: " *Unsaved";
+	color: red;
+}
+
+/* Buttons */
+
+button {
+	appearance: none;
+	cursor: pointer;
+	background-color: transparent;
+
+	padding: 1px 6px;
+	min-width: 25px;
+}
+button:hover, button:focus {
+	background-color: rgba(0, 0, 0, 0.1)
+}
+
+nav button, header button {
+	padding: 8px 16px;
+}
+
+/* Plugins */
+
+#plugin-notes textarea {
+	width: 100%;
+	resize: vertical;
+	height: 80px;
+}
+
+#plugin-dice-result {
+	position: relative;
+}
+#plugin-dice-result.reroll::after {
+	content: "+";
+	position: absolute;
+	right: 4px;
+}

@@ -1,0 +1,3 @@
+A small experiment using pure CSS to implement a paginated picture carousel.
+
+The CSS scroll-snap propoerty is used to create a pagination effect without JS.

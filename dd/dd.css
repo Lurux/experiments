@@ -1,0 +1,112 @@
+body {
+	font-family: Calibri, Arial;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.ddbar {
+	height: 100%;
+	width: calc(100% - 120px);
+	background-color: rgba(0,0,0,0.6); /* topbar color */
+	float: left;
+}
+
+.ddbtn {
+	background-color: rgba(0,0,0,0.6); /* button color */
+	width: 48px; /* 36 */
+	cursor: pointer;
+	color: white;
+	line-height: 40px;
+	text-align: center;
+	height: 40px; /* 30, win 1.2 */
+	float: left;
+}
+.ddbtn:hover {
+	background-color: rgba(85,85,85,0.6); /* - btn hover color */
+}
+.ddbtn:active {
+	background-color: rgba(170,170,170,0.6); /* - btn active color */
+}
+
+.win {
+	width: 600px;
+	height: 400px;
+	position: absolute;
+	top: 50px;
+	left: 50px; 
+	box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 5px 2px;
+	transition: 0.2s ease;
+	overflow: hidden;
+}
+.wbar {
+	height: 40px;
+	background-color: rgba(0,0,0,0.5); /* winbar color */
+	cursor: move;
+	width: calc(100% - 144px);
+	float: left;
+}
+
+.ddside {
+	height: 100%;
+	width: 250px;
+	position: absolute;
+	left: -249px;
+	transition: 0.2s ease;
+}
+.ddtect:hover .ddside {
+	left: -250px;
+	transition: 0s;
+}
+.ddside:hover {
+	left: 0px !important;
+	transition: 0.1s ease !important;
+}
+.ddtect {
+	height: calc(100% - 40px);
+	position: absolute;
+}
+
+.ddliterest {
+	height: 100%;
+	background-color: rgba(0,0,0,0.5); /* side menu color */
+}
+
+.ddlitebtn {
+	background-color: rgba(0,0,0,0.5); /* menu btn color */
+	height: 40px;
+	color: white;
+	cursor: pointer;
+	overflow: hidden;
+	transition: height 0.2s ease 0.1s;
+}
+.ddlitebtn:hover {
+	background-color: rgba(85,85,85,0.5); /* - menu btn hover color */
+}
+.ddlitebtn:active {
+	background-color: rgba(170,170,170,0.5); /* - menu btn active color */
+}
+
+.ddlitebtn > img {
+	float: left;
+	width: 40px;
+	height: 40px;
+}
+.ddlitebtn > p {
+	float: left;
+	margin: 9px;
+	font-size: 18px;
+}
+
+p ~ .miniclose {
+	float: right;
+	margin: 9px 18px;
+}
+.miniclose:hover {
+	color: red;
+}
+
+.segoe {
+font-family: Segoe MDL2 Assets;
+}

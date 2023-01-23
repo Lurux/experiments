@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>TTRPG Helper</title>
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+	<link rel="stylesheet" href="styles.css">
+
+	<script src="scripts.js"></script>
+</head>
+
+<body class="vertical">
+
+<header class="horizontal">
+	<button onclick="navigateTo(Notebook._current)"><i class="fas fa-compass"></i> Current</button>
+	<button onclick="setContext('editor', 'Notebook')"><i class="fas fa-archive"></i> Data</button>
+	<button><i class="fas fa-cog"></i> System</button>
+	<div class="grow"></div>
+	<button id="edit" onclick="toggleEdit()"><i class="fas fa-toggle-off"></i> Edit</button>
+	<button><i class="fas fa-save"></i> Save</button>
+	<button><i class="fas fa-file-download"></i> Load</button>
+</header>
+
+<div class="grow horizontal">
+
+	<nav id="navbar" class="vertical">
+		<button>Here be navbar</button>
+	</nav>
+
+	<main id="context" class="grow">
+		<div><b>Please enable javascript to use this app</b></div>
+		<div>We're an open-source project. We don't track you, and will never do.</div>
+	</main>
+
+	<section id="plugins" class="vertical">
+		<div id="plugin-notes" class="padding">
+			<textarea placeholder="Notes..." class="placeholder" required></textarea>
+		</div>
+		<div id="plugin-dice" class="center">
+			<div class="padding">
+				<button onclick="plugin.dice.roll(4)">d4</button>
+				<button onclick="plugin.dice.roll(6)">d6</button>
+				<button onclick="plugin.dice.roll(8)">d8</button>
+				<button onclick="plugin.dice.roll(12)">d12</button><br/>
+				<button onclick="plugin.dice.roll(20)"><b>d20</b></button>
+				<button onclick="plugin.dice.roll(100)">d100</button>
+			</div>
+			<div class="padding">
+				<div id="plugin-dice-result" class="placeholder">Roll...</div>
+			</div>
+			<div id="plugin-dice-rolls" style="display: none;" class="small separator"></div>
+		</div>
+	</section>
+
+	<nav id="toolbar" class="vertical">
+		<button><i class="fas fa-file"></i></button>
+		<button><i class="fas fa-dice"></i></button>
+		<button><i class="fas fa-wrench"></i></button>
+		<button><i class="fas fa-music"></i></button>
+	</nav>
+
+</div>
+
+</body>
+
+</html>
+

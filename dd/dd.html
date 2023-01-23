@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C/DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+		<link type="text/css" rel="stylesheet" href="dd.css"/>
+		<script type="text/javascript" src="template.js"></script>
+		<script type="text/javascript" src="dd.js"></script>
+		<audio id="mysound" src="click.wav"></audio>
+	</head>
+
+	<body style="background-image:url('antelope canyon.jpg'); background-size:cover; margin:0px;overflow: hidden;">
+		<div id="mainbar" style="width: 100%;height: 40px;position: relative;top: 0px;transition: 0.2s ease;">
+			<div class="ddbar ddbtn segoe"></div>
+			<div class="ddbar ddbtn segoe" style="width: 24px;"></div>
+			<div class="ddbar"></div>
+			<div class="ddbar ddbtn segoe" onclick=""></div>
+		</div>
+
+		<div id="opt" class="win"> <!-- Options -->
+			<div class="wbar" onclick="wbring('opt')"></div>
+			<div class="ddbtn segoe" onclick="whide('opt');"></div>
+			<div class="ddbtn segoe" onclick="wtoggle('opt');"></div>
+			<div class="ddbtn" onclick="wclose('opt');">×</div>
+			<div style="height: calc(100% - 40px);background-color: white;margin-top: 40px;">
+				<button style="float:left;" onclick="plus();">-</button>
+				<div id="disp" style="float:left;">5</div>
+				<button style="float:left;" onclick="less();">+</button>
+				<p style="width:100%;"><br/><br/><span onclick="wopen('file')">➥ Fichiers</span><br/>
+				<span onclick="wopen('fire')">➥ Web</span></p>
+			</div>
+		</div>
+
+		<div id="fire" class="win" style="display: none;"> <!-- Firefox -->
+			<div class="wbar" onclick="wbring('fire');"></div>
+			<div class="ddbtn segoe" onclick="whide('fire');"></div>
+			<div class="ddbtn segoe" onclick="wtoggle('fire');"></div>
+			<div class="ddbtn" onclick="wclose('fire');">×</div>
+
+			<!-- <iframe style="height: calc(100% - 40px);border: 0;width: 100%;" src="">
+			</iframe> -->
+
+			<div style="height: calc(100% - 40px);background-color: white;margin-top: 40px; text-align: center;">
+				<img src="firefox.png" alt="Icon" style="height: 50%;margin-left: auto;margin-top: 15%;">
+			</div>
+		</div>
+
+		<div id="file" class="win" style="display: none;"> <!-- File manager -->
+			<div class="wbar" onclick="wbring('file');"></div>
+			<div class="ddbtn segoe" onclick="whide('file');"></div>
+			<div class="ddbtn segoe" onclick="wtoggle('file');"></div>
+			<div class="ddbtn" onclick="wclose('file');">×</div>
+			<iframe style="height: calc(100% - 40px);border: 0;width: 100%;" src="file:///c:/users/binna">
+			</iframe>
+
+			<!-- <div style="height: calc(100% - 40px);background-color: white;margin-top: 40px;">
+				<p>Bienvenue dans le navigateur de fichiers !<br/>
+				<span onclick="wopen('fire')">➥ Acceuil</span><br/>
+				<span onclick="wopen('opt')">➥ Options</span></p>
+			</div> -->
+		</div>
+
+		<div class="ddtect" id="ddtect" style="width: 5%; z-index:10000;">
+			<div class="ddside" onmouseenter="document.getElementById('mysound').play()">
+				<div class="ddlitebtn" id="firec" onclick="wopen('fire');">
+					<img src="firefox.png" alt="Icon">
+					<p>Firefox</p>
+				</div>
+				<div class="ddlitebtn" id="optc" onclick="wopen('opt');" style="height: 0px;">
+					<img src="libreoffice.png" alt="Icon">
+					<p>Menu options</p>
+				</div>
+				<div class="ddlitebtn" id="filec" onclick="wopen('file');" style="border-bottom: 1px solid rgb(85,85,85);">
+					<img src="file.png" alt="Icon">
+					<p>File manager</p>
+				</div>
+				<div class="ddlitebtn" id="fireo" onclick="wbring('fire');" style="height: 0px;">
+					<img src="firefox.png" alt="Icon">
+					<p>Firefox</p>
+					<p class="miniclose" onclick="wclose('fire')">×</p>
+				</div>
+				<div class="ddlitebtn" id="opto" onclick="wbring('opt');">
+					<img src="libreoffice.png" alt="Icon">
+					<p>Menu options</p>
+					<p class="miniclose" onclick="wclose('opt')">×</p>
+				</div>
+				<div class="ddlitebtn" id="fileo" onclick="wbring('file');" style="height: 0px;">
+					<img src="file.png" alt="Icon">
+					<p>File manager</p>
+					<p class="miniclose" onclick="wclose('file')">×</p>
+				</div>
+				<div class="ddliterest"></div>
+			</div>
+		</div>
+	</body>
+</html>
